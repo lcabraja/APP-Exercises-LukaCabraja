@@ -10,6 +10,7 @@ def test_search_algebra(playwright):
     with playwright.chromium.launch(headless=False) as browser:
         page = browser.new_page()
         page.goto("https://www.google.com/")
+        page.wait_for_selector('//*[@id="W0wltc"]')
         page.click('//*[@id="W0wltc"]')
         page.fill('input[name="q"]', "algebra")
         page.press('input[name="q"]', "Enter")
